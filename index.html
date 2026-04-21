@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Jayenware Shop Clothing, Perfume & Tech Collection</title>
+    <meta name="description" content="Explore premium lifestyle products and quality cotton T-shirts at JAYENWARE -- a subsidiary brand of BINZEO. Discover stylish apparel and innovative essentials designed for modern living.">
+    <meta name="keywords" content="JAYENWARE, BINZEO, E-commerce Bangladesh, Premium Store, Online Shopping, Stylish T-shirts, Cotton T-shirts, Fashion Apparel, Lifestyle Products, Fashion Accessories, Gadgets, Home Essentials, Trendy Apparel, Quality Cotton Shirts, Online Deals, Bangladeshi Online Store">
+    <meta name="author" content="BINZEO">
+    <meta property="og:title" content="JAYENWARE SHOP">
+    <meta property="og:description" content="Shop the latest collection with seamless experience.">
+    <meta property="og:image" content="https://ozuwazkqyrxiwwfjceth.supabase.co/storage/v1/object/public/images/Beige%20Black%20Minimal%20Simple%20Modern%20Handwritten%20Graffiti%20Typographic%20Arts%20and_20251212_154142_0000.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="JAYENWARE">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="JAYENWARE">
+    <meta name="theme-color" content="#0071e3">
+    
+    <link rel="apple-touch-icon" href="https://ozuwazkqyrxiwwfjceth.supabase.co/storage/v1/object/public/images/Beige%20Black%20Minimal%20Simple%20Modern%20Handwritten%20Graffiti%20Typographic%20Arts%20and_20251212_154142_0000.png">
+    <link rel="icon" type="image/jpg" href="https://ozuwazkqyrxiwwfjceth.supabase.co/storage/v1/object/public/images/Beige%20Black%20Minimal%20Simple%20Modern%20Handwritten%20Graffiti%20Typographic%20Arts%20and_20251212_154142_0000.png">
+    <link rel="manifest" id="pwa-manifest">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="style.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "https://www.jayenware.shop/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.jayenware.shop/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+</head>
+<body class="antialiased">
+    <div id="order-loader-overlay">
+        <div class="truck-loader">
+            <div class="truckWrapper">
+                <div class="truckBody">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 198 93" class="trucksvg">
+                        <path stroke-width="3" stroke="#282828" fill="#F83D3D" d="M135 22.5H177.264C178.295 22.5 179.22 23.133 179.594 24.0939L192.33 56.8443C192.442 57.1332 192.5 57.4404 192.5 57.7504V89C192.5 90.3807 191.381 91.5 190 91.5H135C133.619 91.5 132.5 90.3807 132.5 89V25C132.5 23.6193 133.619 22.5 135 22.5Z"></path>
+                        <path stroke-width="3" stroke="#282828" fill="#7D7C7C" d="M146 33.5H181.741C182.779 33.5 183.709 34.1415 184.078 35.112L190.538 52.112C191.16 53.748 189.951 55.5 188.201 55.5H146C144.619 55.5 143.5 54.3807 143.5 53V36C143.5 34.6193 144.619 33.5 146 33.5Z"></path>
+                        <path stroke-width="2" stroke="#282828" fill="#282828" d="M150 65C150 65.39 149.763 65.8656 149.127 66.2893C148.499 66.7083 147.573 67 146.5 67C145.427 67 144.501 66.7083 143.873 66.2893C143.237 65.8656 143 65.39 143 65C143 64.61 143.237 64.1344 143.873 63.7107C144.501 63.2917 145.427 63 146.5 63C147.573 63 148.499 63.2917 149.127 63.7107C149.763 64.1344 150 64.61 150 65Z"></path>
+                        <rect stroke-width="2" stroke="#282828" fill="#FFFCAB" rx="1" height="7" width="5" y="63" x="187"></rect>
+                        <rect stroke-width="2" stroke="#282828" fill="#282828" rx="1" height="11" width="4" y="81" x="193"></rect>
+                        <rect stroke-width="3" stroke="#282828" fill="#DFDFDF" rx="2.5" height="90" width="121" y="1.5" x="6.5"></rect>
+                        <rect stroke-width="2" stroke="#282828" fill="#DFDFDF" rx="2" height="4" width="6" y="84" x="1"></rect>
+                    </svg>
+                </div>
+                <div class="truckTires">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 30 30" class="tiresvg">
+                        <circle stroke-width="3" stroke="#282828" fill="#282828" r="13.5" cy="15" cx="15"></circle>
+                        <circle fill="#DFDFDF" r="7" cy="15" cx="15"></circle>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 30 30" class="tiresvg">
+                        <circle stroke-width="3" stroke="#282828" fill="#282828" r="13.5" cy="15" cx="15"></circle>
+                        <circle fill="#DFDFDF" r="7" cy="15" cx="15"></circle>
+                    </svg>
+                </div>
+                <div class="road"></div>
+                <svg xml:space="preserve" viewBox="0 0 453.459 453.459" xmlns:xlink="http://www.xlink.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" id="Capa_1" version="1.1" fill="#000000" class="lampPost">
+                    <path d="M252.882,0c-37.781,0-68.686,29.953-70.245,67.358h-6.917v8.954c-26.109,2.163-45.463,10.011-45.463,19.366h9.993 c-1.65,5.146-2.507,10.54-2.507,16.017c0,28.956,23.558,52.514,52.514,52.514c28.956,0,52.514-23.558,52.514-52.514 c0-5.478-0.856-10.872-2.506-16.017h9.992c0-9.354-19.352-17.204-45.463-19.366v-8.954h-6.149C200.189,38.779,223.924,16,252.882,16 c29.952,0,54.32,24.368,54.32,54.32c0,28.774-11.078,37.009-25.105,47.437c-17.444,12.968-37.216,27.667-37.216,78.884v113.914 h-0.797c-5.068,0-9.174,4.108-9.174,9.177c0,2.844,1.293,5.383,3.321,7.066c-3.432,27.933-26.851,95.744-8.226,115.459v11.202h45.75 v-11.202c18.625-19.715-4.794-87.527-8.227-115.459c2.029-1.683,3.322-4.223,3.322-7.066c0-5.068-4.107-9.177-9.176-9.177h-0.795 V196.641c0-43.174,14.942-54.283,30.762-66.043c14.793-10.997,31.559-23.461,31.559-60.277C323.202,31.545,291.656,0,252.882,0z M232.77,111.694c0,23.442-19.071,42.514-42.514,42.514c-23.442,0-42.514-19.072-42.514-42.514c0-5.531,1.078-10.957,3.141-16.017 h78.747C231.693,100.736,232.77,106.162,232.77,111.694z"></path>
+                </svg>
+            </div>
+        </div>
+        <p class="mt-4 font-black uppercase tracking-widest text-dark">Processing Order...</p>
+    </div>
+
+    <div id="global-loader">
+        <div class="loader-container">
+            <div class="dot dot-1"></div>
+            <div class="dot dot-2"></div>
+            <div class="dot dot-3"></div>
+        </div>
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" style="display:none;">
+            <defs>
+                <filter id="goo">
+                    <feGaussianBlur result="blur" stdDeviation="10" in="SourceGraphic"></feGaussianBlur>
+                    <feColorMatrix values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" mode="matrix" in="blur"></feColorMatrix>
+                </filter>
+            </defs>
+        </svg>
+    </div>
+
+    <div id="msg-modal" class="fixed inset-0 z-[200] hidden flex items-center justify-center p-4">
+        <div class="glass-card bg-white w-full max-w-xs rounded-[2.5rem] p-8 text-center shadow-2xl transform scale-90 transition-transform duration-300" id="msg-box">
+            <div id="msg-icon" class="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-full text-2xl bg-green-100 text-green-600"></div>
+            <h3 id="msg-text" class="text-sm font-bold text-dark leading-tight mb-6"></h3>
+            <button onclick="closeMsg()" class="w-full py-3 bg-dark text-white rounded-2xl font-bold text-xs uppercase tracking-widest hover:bg-black transition">OK</button>
+        </div>
+    </div>
+
+    <div id="cart-drawer" class="fixed top-0 right-0 w-full max-w-md h-full bg-white z-[60] shadow-2xl flex flex-col">
+        <div class="p-6 border-b flex justify-between items-center bg-gray-50">
+            <h2 class="text-xl font-black uppercase tracking-tighter">Your Shopping Bag</h2>
+            <button onclick="toggleCart()" class="text-gray-400 text-2xl"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div id="cart-items" class="flex-grow overflow-y-auto p-6 space-y-4 custom-scroll"></div>
+        <div class="p-6 border-t bg-gray-50">
+            <div class="mb-4">
+                <div class="flex gap-2">
+                    <input type="text" id="promo-input" placeholder="Promo Code" class="flex-grow p-3 rounded-xl border text-sm outline-none focus:ring-1 focus:ring-primary">
+                    <button onclick="applyPromo()" class="px-4 bg-dark text-white rounded-xl text-xs font-bold">Apply</button>
+                </div>
+                <p id="promo-msg" class="text-[10px] mt-1 font-bold"></p>
+            </div>
+            <div class="space-y-2 mb-6">
+                <div class="flex justify-between items-center text-gray-500 text-xs"><span>Subtotal</span><span id="cart-subtotal">৳ 0.00</span></div>
+                <div id="promo-row" class="hidden flex justify-between items-center text-green-600 text-xs font-bold"><span>Discount</span><span id="cart-discount">- ৳ 0.00</span></div>
+                <div class="flex justify-between items-center border-t pt-2"><span class="font-bold text-gray-900 uppercase text-xs">Total Amount</span><span id="cart-total" class="text-2xl font-black text-primary">৳ 0.00</span></div>
+            </div>
+            <button onclick="showCheckoutOptions()" class="w-full py-4 bg-dark text-white rounded-2xl font-bold shadow-xl hover:bg-black transition">Confirm Order</button>
+        </div>
+    </div>
+
+    <nav class="glass-nav fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex justify-between items-center gap-4">
+            <div class="flex items-center gap-2 cursor-pointer shrink-0" onclick="navigate('home')">
+                <img src="https://ozuwazkqyrxiwwfjceth.supabase.co/storage/v1/object/public/images/Beige%20Black%20Minimal%20Simple%20Modern%20Handwritten%20Graffiti%20Typographic%20Arts%20and_20251212_154142_0000.png" class="w-8 h-8 rounded-lg shadow-sm">
+                <span class="text-xl font-bold">JAYENWARE</span>
+            </div>
+            <div class="hidden md:flex flex-grow items-center overflow-hidden">
+                <div class="flex items-center space-x-6 text-sm font-medium mr-6 shrink-0">
+                    <button onclick="navigate('home')" class="hover:text-primary transition">Home</button>
+                    <button onclick="navigate('products')" class="hover:text-primary transition">Products</button>
+                </div>
+                <div id="desktop-category-nav" class="flex items-center space-x-6 text-sm font-medium overflow-x-auto no-scrollbar whitespace-nowrap py-1"></div>
+            </div>
+            <div class="flex items-center gap-4 shrink-0">
+                <div class="relative cursor-pointer" onclick="navigate('wishlist')">
+                    <i class="fa-solid fa-heart text-xl text-gray-400 hover:text-red-500 transition"></i>
+                    <span id="wish-count" class="absolute -top-2 -right-2 bg-red-500 text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center font-bold">0</span>
+                </div>
+                <div class="relative cursor-pointer" onclick="toggleCart()">
+                    <i class="fa-solid fa-bag-shopping text-xl"></i>
+                    <span id="cart-count" class="absolute -top-2 -right-2 bg-primary text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center font-bold">0</span>
+                </div>
+                <div id="auth-nav-area" class="hidden md:block">
+                    <button onclick="openAuthModal()" class="px-5 py-2 bg-primary text-white rounded-full text-xs font-bold shadow-md">Sign In</button>
+                </div>
+                <button onclick="toggleMobileMenu()" class="md:hidden text-xl"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 border-t flex flex-col p-6 space-y-4 font-bold text-center">
+            <button onclick="navigate('home'); toggleMobileMenu()">Home</button>
+            <button onclick="navigate('products'); toggleMobileMenu()">Products</button>
+            <button onclick="navigate('wishlist'); toggleMobileMenu()">Wishlist</button>
+            <div id="mobile-category-links" class="flex flex-col space-y-4"></div>
+            <div id="mobile-auth-area" class="pt-4 border-t border-gray-100"></div>
+        </div>
+    </nav>
+
+    <main class="pt-16">
+        <section id="home" class="page-section active-page fade-in bg-white pt-2">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="mb-6 flex gap-2">
+                    <div class="relative flex-grow">
+                        <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                        <input type="text" id="main-search-input" autocomplete="off" placeholder="Search product title..." class="w-full pl-11 pr-4 py-4 rounded-2xl bg-gray-100 border-none outline-none text-sm font-medium focus:ring-2 focus:ring-primary/20">
+                        <div id="search-suggestions" class="hidden absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100 z-[70] overflow-hidden max-h-80 overflow-y-auto custom-scroll"></div>
+                    </div>
+                    <button onclick="handleMainSearch()" class="px-6 py-4 bg-dark text-white rounded-2xl font-bold text-sm shadow-lg hover:bg-black transition">Search</button>
+                </div>
+                <div class="relative overflow-hidden rounded-[1.5rem] md:rounded-[2.5rem] h-[180px] sm:h-[300px] md:h-[450px] shadow-lg bg-gray-100">
+                    <div id="hero-banner-container" class="absolute inset-0 z-0"></div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent z-[1]"></div>
+                    <div class="relative z-10 h-full flex flex-col justify-center px-6 md:px-12 text-white">
+                        <h1 id="hero-title" class="text-2xl md:text-5xl font-black tracking-tight mb-2 drop-shadow-lg">JAYENWARE</h1>
+                        <p id="hero-subtitle" class="text-xs md:text-lg text-gray-100 max-w-md font-medium mb-4"></p>
+                        <button onclick="navigate('products')" class="w-fit px-6 py-2 md:px-10 md:py-3 bg-white text-black rounded-full text-xs md:text-sm font-bold shadow-xl hover:scale-105 transition-all">Shop Now</button>
+                    </div>
+                </div>
+                <div class="mt-8 flex justify-between items-center mb-4">
+                    <h2 class="text-xl font-black uppercase tracking-tight">Categories</h2>
+                    <div class="relative inline-block text-left" id="custom-sort-container">
+                        <button onclick="toggleSortMenu()" class="flex items-center gap-2 px-4 py-2 bg-gray-100 rounded-xl text-[10px] font-bold text-primary hover:bg-gray-200 transition">
+                            <i class="fa-solid fa-sort"></i> <span id="current-sort-label">Latest</span> <i class="fa-solid fa-chevron-down text-[8px]"></i>
+                        </button>
+                        <div id="sort-dropdown" class="hidden absolute right-0 mt-2 w-44 bg-white rounded-2xl shadow-2xl border border-gray-100 z-[60] overflow-hidden p-1 backdrop-blur-xl">
+                            <button onclick="handleSorting('new', 'Latest')" class="w-full text-left px-4 py-2 text-[10px] font-bold hover:bg-primary/10 hover:text-primary rounded-xl transition">Latest</button>
+                            <button onclick="handleSorting('price-low', 'Price: Low-High')" class="w-full text-left px-4 py-2 text-[10px] font-bold hover:bg-primary/10 hover:text-primary rounded-xl transition">Price: Low-High</button>
+                            <button onclick="handleSorting('price-high', 'Price: High-Low')" class="w-full text-left px-4 py-2 text-[10px] font-bold hover:bg-primary/10 hover:text-primary rounded-xl transition">Price: High-Low</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="category-filter-bar" class="flex gap-3 mb-8 overflow-x-auto pb-4 no-scrollbar"></div>
+            </div>
+        </section>
+
+        <div id="home-featured-sections" class="bg-white">
+            <section id="hot-products-section" class="pt-4 pb-8 md:pt-6 md:pb-12 hidden">
+                <div class="max-w-7xl mx-auto px-4">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="flex items-center gap-3">
+                            <span class="w-8 h-8 md:w-10 md:h-10 bg-red-500 text-white flex items-center justify-center rounded-full text-lg animate-pulse"><i class="fa-solid fa-fire"></i></span>
+                            <h2 class="text-xl md:text-3xl font-black uppercase tracking-tight">Hot Deals</h2>
+                        </div>
+                        <button onclick="navigate('products')" class="text-xs font-bold text-primary">View All <i class="fa-solid fa-chevron-right ml-1"></i></button>
+                    </div>
+                    <div id="hot-products-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6"></div>
+                </div>
+            </section>
+            <section id="recent-products-section" class="py-8 md:py-12 hidden bg-gray-50/50">
+                <div class="max-w-7xl mx-auto px-4">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="w-8 h-8 md:w-10 md:h-10 bg-blue-500 text-white flex items-center justify-center rounded-full text-lg"><i class="fa-solid fa-clock-rotate-left"></i></span>
+                        <h2 class="text-xl md:text-3xl font-black uppercase tracking-tight">Recently Viewed</h2>
+                    </div>
+                    <div id="recent-products-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6"></div>
+                </div>
+            </section>
+            <section id="best-products-section" class="py-8 md:py-12 bg-gray-50 hidden">
+                <div class="max-w-7xl mx-auto px-4">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="flex items-center gap-3">
+                            <span class="w-8 h-8 md:w-10 md:h-10 bg-yellow-500 text-white flex items-center justify-center rounded-full text-lg"><i class="fa-solid fa-crown"></i></span>
+                            <h2 class="text-xl md:text-3xl font-black uppercase tracking-tight">Best Selling</h2>
+                        </div>
+                        <button onclick="navigate('products')" class="text-xs font-bold text-primary">View All <i class="fa-solid fa-chevron-right ml-1"></i></button>
+                    </div>
+                    <div id="best-products-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6"></div>
+                </div>
+            </section>
+        </div>
+
+        <section id="products" class="page-section py-24 liquid-bg">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="text-4xl font-black text-center mb-16 uppercase tracking-widest">Our Collection</h2>
+                <div id="projects-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6"></div>
+            </div>
+        </section>
+
+        <section id="wishlist" class="page-section py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="text-4xl font-black text-center mb-16 uppercase tracking-widest">My Wishlist</h2>
+                <div id="wishlist-grid" class="grid grid-cols-2 md:grid-cols-4 gap-6"></div>
+                <div id="wishlist-empty" class="text-center py-20 hidden">
+                    <p class="text-gray-400 italic">No products saved in wishlist.</p>
+                    <button onclick="navigate('products')" class="mt-4 px-8 py-3 bg-primary text-white rounded-full font-bold">Start Shopping</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="product-details" class="page-section py-24 bg-white min-h-screen">
+            <div class="max-w-5xl mx-auto px-4">
+                <button onclick="navigate('products')" class="mb-8 text-sm font-bold text-gray-400 hover:text-primary transition flex items-center gap-2"><i class="fa-solid fa-arrow-left"></i> Back to Collection</button>
+                <div id="product-detail-content"></div>
+                <div id="related-products-area" class="mt-24 border-t pt-16">
+                    <h3 class="text-2xl font-black uppercase mb-8">You May Also Like</h3>
+                    <div id="related-products-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="news" class="page-section py-24 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="text-4xl font-black text-center mb-16 uppercase tracking-tight">Style Blog</h2>
+                <div id="news-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
+            </div>
+        </section>
+
+        <section id="account" class="page-section py-24 bg-gray-100">
+            <div class="max-w-3xl mx-auto px-4">
+                <div class="glass-card bg-white rounded-[3rem] p-12 text-center shadow-2xl">
+                    <div class="w-24 h-24 bg-primary/10 text-primary rounded-full flex items-center justify-center text-4xl mx-auto mb-6"><i class="fa-solid fa-user"></i></div>
+                    <h2 id="profile-name" class="text-3xl font-black mb-2">Welcome</h2>
+                    <p id="profile-email" class="text-gray-400 mb-8"></p>
+                    <div class="grid grid-cols-1 gap-4 text-left mb-10">
+                        <div class="p-6 bg-gray-50 rounded-3xl flex justify-between items-start">
+                            <div><h3 class="text-[10px] font-bold text-gray-400 uppercase mb-1">Shipping Details</h3><div id="profile-address-full" class="text-sm font-medium text-gray-700">Not set</div></div>
+                            <button onclick="openEditProfile()" class="text-primary text-xs font-bold uppercase"><i class="fa-solid fa-pen-to-square mr-1"></i>Edit</button>
+                        </div>
+                        <div class="p-6 bg-white border border-gray-100 rounded-3xl">
+                            <h3 class="text-[10px] font-bold text-gray-400 uppercase mb-3">Order History</h3>
+                            <div id="user-order-list" class="space-y-4 max-h-[400px] overflow-y-auto custom-scroll pr-2"><p class="text-xs italic text-gray-400">Loading your orders...</p></div>
+                        </div>
+                    </div>
+                    <button onclick="handleLogout()" class="px-10 py-4 bg-red-500 text-white rounded-2xl font-bold w-full">Sign Out</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-gray-400 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="flex flex-wrap justify-center gap-6 mb-8 text-[11px] font-bold uppercase tracking-widest">
+                <button onclick="openPolicy('privacy')" class="hover:text-white transition">Privacy Policy</button>
+                <button onclick="openPolicy('terms')" class="hover:text-white transition">Order Policy</button>
+                <button onclick="openPolicy('cookies')" class="hover:text-white transition">Return Policy</button>
+                <button onclick="openPolicy('shipping')" class="hover:text-white transition">Shipping Info</button>
+            </div>
+            <div class="mb-4">
+                <p class="text-[10px] tracking-widest text-gray-500 mb-1">Powered by</p>
+                <a href="https://binzeo.vercel.app" target="_blank" class="text-primary font-black hover:opacity-80 transition">BINZEO</a>
+                <p class="mt-2 text-[10px] text-gray-500 italic">"We support BINZEO, and we also proudly support those who are supported by BINZEO"</p>
+                <p class="text-[9px] text-gray-600 mt-1 uppercase font-bold tracking-tighter">JAYENWARE is an subsidiary under BINZEO</p>
+            </div>
+            <p class="text-[10px]">&copy; <span id="display-year"></span> JAYENWARE. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="auth-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4">
+        <div class="glass-card bg-white w-full max-w-md rounded-[2.5rem] p-10 relative">
+            <button onclick="closeAuthModal()" class="absolute top-6 right-6 text-gray-400"><i class="fa-solid fa-xmark"></i></button>
+            <div class="flex gap-4 mb-8 border-b">
+                <button onclick="toggleAuth('login')" id="t-login" class="pb-2 font-bold text-primary border-b-2 border-primary">Login</button>
+                <button onclick="toggleAuth('signup')" id="t-signup" class="pb-2 font-bold text-gray-400">Sign Up</button>
+            </div>
+            <form id="auth-form" class="space-y-4">
+                <div id="signup-fields" class="hidden space-y-4">
+                    <input type="text" id="auth-name" placeholder="Full Name" class="w-full p-4 rounded-2xl bg-gray-50 border outline-none">
+                    <input type="tel" id="auth-phone" placeholder="Phone Number" class="w-full p-4 rounded-2xl bg-gray-50 border outline-none">
+                    <input type="text" id="auth-country" placeholder="Country" class="w-full p-4 rounded-2xl bg-gray-50 border outline-none">
+                    <div class="grid grid-cols-2 gap-4"><input type="text" id="auth-district" placeholder="District" class="p-4 rounded-2xl bg-gray-50 border outline-none"><input type="text" id="auth-subdistrict" placeholder="Upazila" class="p-4 rounded-2xl bg-gray-50 border outline-none"></div>
+                    <textarea id="auth-address" placeholder="Full Detailed Address" class="w-full p-4 rounded-2xl bg-gray-50 border outline-none h-20"></textarea>
+                </div>
+                <input type="email" id="auth-email" placeholder="Email" required class="w-full p-4 rounded-2xl bg-gray-50 border outline-none">
+                <input type="password" id="auth-pass" placeholder="Password" required class="w-full p-4 rounded-2xl bg-gray-50 border outline-none">
+                <button type="submit" id="auth-btn" class="w-full py-4 bg-dark text-white rounded-2xl font-bold">Continue</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="edit-profile-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4">
+        <div class="glass-card bg-white w-full max-w-md rounded-[2.5rem] p-10 relative">
+            <button onclick="document.getElementById('edit-profile-modal').classList.add('hidden')" class="absolute top-6 right-6 text-gray-400"><i class="fa-solid fa-xmark"></i></button>
+            <h2 class="text-xl font-black mb-6 uppercase">Update Profile</h2>
+            <div class="space-y-4">
+                <input type="text" id="edit-name" placeholder="Full Name" class="w-full p-4 rounded-2xl bg-gray-50 border outline-none text-sm">
+                <input type="tel" id="edit-phone" placeholder="Phone Number" class="w-full p-4 rounded-2xl bg-gray-50 border outline-none text-sm">
+                <div class="grid grid-cols-2 gap-4"><input type="text" id="edit-district" placeholder="District" class="p-4 rounded-2xl bg-gray-50 border outline-none text-sm"><input type="text" id="edit-subdistrict" placeholder="Upazila" class="p-4 rounded-2xl bg-gray-50 border outline-none text-sm"></div>
+                <textarea id="edit-address" placeholder="Address" class="w-full p-4 rounded-2xl bg-gray-50 border outline-none text-sm h-20"></textarea>
+                <button onclick="handleUpdateProfile()" class="w-full py-4 bg-primary text-white rounded-2xl font-bold">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="order-details-modal" class="fixed inset-0 z-[150] hidden flex items-center justify-center p-4">
+        <div class="glass-card bg-white w-full max-w-lg rounded-[2.5rem] p-8 relative max-h-[90vh] overflow-y-auto custom-scroll">
+            <button onclick="closeOrderDetails()" class="absolute top-6 right-6 text-gray-400 text-xl"><i class="fa-solid fa-xmark"></i></button>
+            <h2 id="od-title" class="text-xl font-black mb-6 uppercase border-b pb-4">Order Details</h2>
+            <div id="order-details-body" class="space-y-6 text-sm"></div>
+            <button onclick="closeOrderDetails()" class="mt-8 w-full py-4 bg-dark text-white rounded-2xl font-bold uppercase tracking-widest">Close</button>
+        </div>
+    </div>
+
+    <div id="policy-modal" class="fixed inset-0 z-[130] hidden flex items-center justify-center p-4">
+        <div class="glass-card bg-white w-full max-w-2xl rounded-[2.5rem] p-10 relative max-h-[80vh] overflow-y-auto custom-scroll">
+            <button onclick="document.getElementById('policy-modal').classList.add('hidden')" class="absolute top-6 right-6 text-gray-400 text-xl"><i class="fa-solid fa-xmark"></i></button>
+            <h2 id="policy-title" class="text-2xl font-black mb-6 uppercase tracking-tight">Policy</h2>
+            <div id="policy-content" class="text-sm text-gray-600 leading-relaxed space-y-4"></div>
+        </div>
+    </div>
+
+    <div id="checkout-modal" class="fixed inset-0 z-[110] hidden flex items-center justify-center p-4">
+        <div class="glass-card bg-white w-full max-w-md rounded-[2.5rem] p-10 relative">
+            <button onclick="document.getElementById('checkout-modal').classList.add('hidden')" class="absolute top-6 right-6 text-gray-400"><i class="fa-solid fa-xmark"></i></button>
+            <h2 class="text-xl font-black mb-6 uppercase">Confirm Shipping</h2>
+            <div class="space-y-6">
+                <button onclick="prepareOrderReview('profile')" class="w-full p-6 border-2 border-primary/20 rounded-3xl text-left hover:border-primary transition group"><span class="block text-[10px] font-black uppercase text-gray-400 mb-1">Ship to Profile Address</span><span id="checkout-profile-addr" class="text-xs font-bold text-dark block"></span></button>
+                <div class="relative py-2 flex items-center"><div class="flex-grow border-t"></div><span class="px-3 text-[10px] font-bold text-gray-300">OR</span><div class="flex-grow border-t"></div></div>
+                <div class="space-y-3">
+                    <p class="text-[10px] font-black uppercase text-gray-400">Enter New Address</p>
+                    <input type="text" id="new-phone" placeholder="New Phone Number" class="w-full p-4 rounded-2xl bg-gray-50 border outline-none text-sm">
+                    <div class="grid grid-cols-2 gap-2"><input type="text" id="new-district" placeholder="District" class="p-4 rounded-2xl bg-gray-50 border outline-none text-sm"><input type="text" id="new-upazila" placeholder="Upazila" class="p-4 rounded-2xl bg-gray-50 border outline-none text-sm"></div>
+                    <textarea id="new-address" placeholder="New Full Address..." class="w-full p-4 rounded-2xl bg-gray-50 border outline-none text-sm h-20"></textarea>
+                    <button onclick="prepareOrderReview('new')" class="w-full py-4 bg-primary text-white rounded-2xl font-bold">Ship to New Address</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="review-modal" class="fixed inset-0 z-[120] hidden flex items-center justify-center p-4">
+        <div class="glass-card bg-white w-full max-w-lg rounded-[2.5rem] p-8 relative max-h-[90vh] overflow-y-auto custom-scroll">
+            <button onclick="document.getElementById('review-modal').classList.add('hidden')" class="absolute top-6 right-6 text-gray-400"><i class="fa-solid fa-xmark"></i></button>
+            <h2 class="text-2xl font-black mb-6 uppercase border-b pb-4">Review Your Order</h2>
+            <div id="order-review-body" class="space-y-6 text-sm"></div>
+            <div class="mt-8 pt-6 border-t space-y-3">
+                <button onclick="confirmFinalCheckout()" class="w-full py-4 bg-primary text-white rounded-2xl font-bold shadow-lg hover:scale-[1.02] transition">Confirm & Place Order</button>
+                <button onclick="document.getElementById('review-modal').classList.add('hidden')" class="w-full py-4 bg-gray-100 text-dark rounded-2xl font-bold">Back to Edit</button>
+            </div>
+        </div>
+    </div>
+
+    <a href="https://m.me/861762253694814" target="_blank" class="messenger-float"><i class="fa-brands fa-facebook-messenger"></i></a>
+
+    <script src="script.js"></script>
+</body>
+</html>
