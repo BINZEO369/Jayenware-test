@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en-BD" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>All Products | JAYENWARE</title>
+    <meta name="description" content="Browse all premium lifestyle products at JAYENWARE. Quality cotton T-shirts, caps, accessories and more.">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="theme-color" content="#1a1a1a">
+    <meta property="og:title" content="All Products | JAYENWARE">
+    <meta property="og:description" content="Browse all premium lifestyle products at JAYENWARE.">
+    <meta property="og:image" content="https://ozuwazkqyrxiwwfjceth.supabase.co/storage/v1/object/public/images/Beige%20Black%20Minimal%20Simple%20Modern%20Handwritten%20Graffiti%20Typographic%20Arts%20and_20251212_154142_0000.png">
+    <meta property="og:url" content="https://www.jayenware.shop/products">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="All Products | JAYENWARE">
+    <meta name="twitter:description" content="Browse all premium lifestyle products at JAYENWARE.">
+    <meta name="twitter:image" content="https://ozuwazkqyrxiwwfjceth.supabase.co/storage/v1/object/public/images/Beige%20Black%20Minimal%20Simple%20Modern%20Handwritten%20Graffiti%20Typographic%20Arts%20and_20251212_154142_0000.png">
+    <link rel="canonical" href="https://www.jayenware.shop/products">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://ozuwazkqyrxiwwfjceth.supabase.co/storage/v1/object/public/images/Beige%20Black%20Minimal%20Simple%20Modern%20Handwritten%20Graffiti%20Typographic%20Arts%20and_20251212_154142_0000.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="antialiased">
+    <div id="header-container"></div>
+    
+    <main class="pt-14 sm:pt-16 lg:pt-20">
+        <section id="products" class="page-section active-page fade-in py-6 sm:py-8 lg:py-12">
+            <div class="max-w-7xl mx-auto px-3 sm:px-4">
+                <div class="flex flex-col lg:flex-row gap-6 lg:gap-8">
+                    <aside class="hidden lg:block w-56 xl:w-64 shrink-0">
+                        <div class="sticky top-24 space-y-6">
+                            <div>
+                                <h3 class="font-bold text-xs sm:text-sm uppercase tracking-wider mb-3">Categories</h3>
+                                <div id="sidebar-categories" class="space-y-1"></div>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-xs sm:text-sm uppercase tracking-wider mb-3">Price Range</h3>
+                                <div class="flex gap-2">
+                                    <input type="number" id="filter-min-price" placeholder="Min" class="w-full p-2 border rounded-lg text-[10px] sm:text-xs">
+                                    <input type="number" id="filter-max-price" placeholder="Max" class="w-full p-2 border rounded-lg text-[10px] sm:text-xs">
+                                </div>
+                                <button onclick="applyPriceFilter()" class="mt-2 w-full py-2 bg-primary text-white rounded-lg text-[10px] font-bold uppercase">Apply</button>
+                            </div>
+                        </div>
+                    </aside>
+                    
+                    <div class="flex-grow min-w-0">
+                        <div class="flex justify-between items-center mb-4 sm:mb-6">
+                            <h2 class="text-xl sm:text-2xl lg:text-3xl font-black font-serif truncate">All Products</h2>
+                            <div class="flex gap-1.5 sm:gap-2 shrink-0">
+                                <button onclick="toggleMobileFilters()" class="lg:hidden px-3 sm:px-4 py-2 border rounded-full text-[9px] sm:text-[10px] font-bold"><i class="fa-solid fa-sliders mr-1"></i>Filter</button>
+                                <div class="relative" id="sort-container">
+                                    <button onclick="toggleSortMenu()" class="px-3 sm:px-4 py-2 border rounded-full text-[9px] sm:text-[10px] font-bold flex items-center gap-1.5">
+                                        <i class="fa-solid fa-arrow-down-wide-short"></i>
+                                        <span id="current-sort-label" class="hidden sm:inline">Latest</span>
+                                        <i class="fa-solid fa-chevron-down text-[8px]"></i>
+                                    </button>
+                                    <div id="sort-dropdown" class="hidden absolute right-0 mt-2 w-40 sm:w-48 bg-white rounded-2xl shadow-2xl border z-50 p-1">
+                                        <button onclick="handleSorting('new','Latest')" class="w-full text-left px-4 py-2.5 text-[10px] font-bold hover:bg-gray-50 rounded-xl transition">Latest</button>
+                                        <button onclick="handleSorting('price-low','Price: Low-High')" class="w-full text-left px-4 py-2.5 text-[10px] font-bold hover:bg-gray-50 rounded-xl transition">Low-High</button>
+                                        <button onclick="handleSorting('price-high','Price: High-Low')" class="w-full text-left px-4 py-2.5 text-[10px] font-bold hover:bg-gray-50 rounded-xl transition">High-Low</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="products-grid" class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-5"></div>
+                    </div>
+                </div>
+                
+                <div id="mobile-filter-modal" class="hidden fixed inset-0 z-[100] bg-white overflow-y-auto">
+                    <div class="p-4 sm:p-6">
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="font-black text-lg uppercase">Filters</h3>
+                            <button onclick="toggleMobileFilters()" class="text-2xl p-1">&times;</button>
+                        </div>
+                        <div class="space-y-6">
+                            <div>
+                                <h4 class="font-bold text-xs uppercase mb-3">Categories</h4>
+                                <div id="mobile-filter-categories" class="space-y-1"></div>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-xs uppercase mb-3">Price Range</h4>
+                                <div class="flex gap-2">
+                                    <input type="number" id="m-filter-min-price" placeholder="Min" class="w-full p-3 border rounded-xl text-sm">
+                                    <input type="number" id="m-filter-max-price" placeholder="Max" class="w-full p-3 border rounded-xl text-sm">
+                                </div>
+                            </div>
+                        </div>
+                        <button onclick="applyMobileFilters();toggleMobileFilters()" class="w-full py-4 bg-primary text-white rounded-2xl font-bold mt-8 uppercase text-sm">Apply Filters</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-container"></div>
+    <div id="cart-drawer-container"></div>
+    <div id="modals-container"></div>
+
+    <div class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50">
+        <a href="https://m.me/861762253694814" target="_blank" rel="noopener noreferrer" class="w-12 h-12 sm:w-14 sm:h-14 bg-primary text-white rounded-full flex items-center justify-center text-lg sm:text-xl shadow-2xl hover:bg-accent transition-all no-underline" aria-label="Chat with us on Messenger">
+            <i class="fa-brands fa-facebook-messenger"></i>
+        </a>
+        <span class="absolute top-0 right-0 w-2.5 h-2.5 sm:w-3 sm:h-3 bg-green-500 rounded-full border-2 border-white" aria-label="Online"></span>
+    </div>
+
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>
