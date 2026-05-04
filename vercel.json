@@ -1,0 +1,49 @@
+{
+  "version": 2,
+  "buildCommand": "echo 'Static site ready'",
+  "outputDirectory": ".",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/product/:slug", "destination": "/pages/product-details.html" },
+    { "source": "/category/:slug", "destination": "/pages/products.html" },
+    { "source": "/order/:id", "destination": "/pages/account.html" },
+    { "source": "/search", "destination": "/pages/products.html" },
+    { "source": "/products", "destination": "/pages/products.html" },
+    { "source": "/wishlist", "destination": "/pages/wishlist.html" },
+    { "source": "/journal", "destination": "/pages/journal.html" },
+    { "source": "/account", "destination": "/pages/account.html" },
+    { "source": "/login", "destination": "/index.html" },
+    { "source": "/signup", "destination": "/index.html" },
+    { "source": "/cart", "destination": "/pages/cart.html" },
+    { "source": "/checkout", "destination": "/pages/cart.html" }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        }
+      ]
+    }
+  ]
+}
