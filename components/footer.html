@@ -1,0 +1,39 @@
+<footer class="bg-primary text-gray-400 pt-12 sm:pt-16 pb-6 sm:pb-8">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-10 sm:mb-12">
+            <div class="col-span-2 lg:col-span-1">
+                <h4 class="text-white font-black font-serif text-base sm:text-lg mb-3 sm:mb-4">JAYENWARE</h4>
+                <p class="text-[10px] sm:text-xs leading-relaxed">Premium lifestyle products designed for modern living. A subsidiary of BINZEO.</p>
+            </div>
+            <div>
+                <h5 class="text-white font-bold text-[10px] sm:text-xs uppercase tracking-wider mb-3 sm:mb-4">Shop</h5>
+                <div class="space-y-1.5 sm:space-y-2 text-[10px] sm:text-xs">
+                    <a href="/pages/products.html" onclick="event.preventDefault();navigate('products')" class="block hover:text-white transition no-underline text-gray-400">All Products</a>
+                    <a href="/pages/products.html" onclick="event.preventDefault();navigate('products')" class="block hover:text-white transition no-underline text-gray-400">New Arrivals</a>
+                    <a href="/pages/wishlist.html" onclick="event.preventDefault();navigate('wishlist')" class="block hover:text-white transition no-underline text-gray-400">Wishlist</a>
+                </div>
+            </div>
+            <div>
+                <h5 class="text-white font-bold text-[10px] sm:text-xs uppercase tracking-wider mb-3 sm:mb-4">Support</h5>
+                <div class="space-y-1.5 sm:space-y-2 text-[10px] sm:text-xs">
+                    <button onclick="openPolicy('shipping')" class="block hover:text-white transition text-gray-400">Shipping</button>
+                    <button onclick="openPolicy('terms')" class="block hover:text-white transition text-gray-400">Order Policy</button>
+                    <button onclick="openPolicy('cookies')" class="block hover:text-white transition text-gray-400">Returns</button>
+                    <button onclick="openPolicy('privacy')" class="block hover:text-white transition text-gray-400">Privacy</button>
+                </div>
+            </div>
+            <div>
+                <h5 class="text-white font-bold text-[10px] sm:text-xs uppercase tracking-wider mb-3 sm:mb-4">Connect</h5>
+                <div class="flex gap-3 text-base sm:text-lg">
+                    <a href="https://m.me/861762253694814" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition text-gray-400" aria-label="Facebook Messenger"><i class="fa-brands fa-facebook-messenger"></i></a>
+                    <a href="#" class="hover:text-accent transition text-gray-400" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-accent transition text-gray-400" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 pt-6 sm:pt-8 text-center">
+            <p class="text-[9px] sm:text-[10px] uppercase tracking-wider text-gray-500 mb-2">Powered by <a href="https://binzeo.vercel.app" target="_blank" rel="noopener noreferrer" class="text-accent font-bold hover:text-white transition no-underline">BINZEO</a></p>
+            <p class="text-[8px] sm:text-[9px]">&copy; <span id="display-year"></span> JAYENWARE. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
