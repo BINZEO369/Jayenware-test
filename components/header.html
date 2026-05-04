@@ -1,0 +1,65 @@
+<div id="global-loader" style="position:fixed;inset:0;background:#fff;z-index:9999;display:flex;align-items:center;justify-content:center;transition:opacity 0.4s;">
+    <div style="text-align:center;">
+        <div style="width:36px;height:36px;border:2px solid #1a1a1a;border-top-color:transparent;border-radius:50%;animation:spin 0.7s linear infinite;margin:0 auto 12px;"></div>
+        <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-primary/50">JAYENWARE</p>
+    </div>
+</div>
+<style>@keyframes spin{to{transform:rotate(360deg)}}</style>
+
+<nav class="glass-nav fixed w-full top-0 z-50" id="main-nav">
+    <div class="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 h-14 sm:h-16 lg:h-20 flex justify-between items-center">
+        <a href="/" onclick="event.preventDefault();navigate('home')" class="flex items-center gap-2 sm:gap-3 shrink-0 no-underline" aria-label="JAYENWARE Home">
+            <img src="https://ozuwazkqyrxiwwfjceth.supabase.co/storage/v1/object/public/images/Beige%20Black%20Minimal%20Simple%20Modern%20Handwritten%20Graffiti%20Typographic%20Arts%20and_20251212_154142_0000.png" class="w-7 h-7 sm:w-8 sm:h-8 lg:w-10 lg:h-10 rounded-lg shadow-sm" alt="JAYENWARE Logo" loading="eager" width="40" height="40">
+            <span class="text-base sm:text-lg lg:text-xl font-black tracking-tight font-serif text-primary">JAYENWARE</span>
+        </a>
+        
+        <div class="hidden lg:flex items-center gap-6 xl:gap-8 text-xs font-bold uppercase tracking-widest">
+            <a href="/" onclick="event.preventDefault();navigate('home')" class="cursor-pointer hover:text-accent transition-colors py-2 text-primary no-underline" aria-label="Home">Home</a>
+            <div class="relative mega-menu-trigger py-2">
+                <a href="/pages/products.html" onclick="event.preventDefault();navigate('products')" class="cursor-pointer hover:text-accent transition-colors flex items-center gap-1 text-primary no-underline" aria-label="Shop Products">
+                    Shop <i class="fa-solid fa-chevron-down text-[8px]"></i>
+                </a>
+                <div class="mega-menu p-6 xl:p-8" style="width:100vw;left:50%;transform:translateX(-50%);">
+                    <div class="max-w-7xl mx-auto">
+                        <div class="grid grid-cols-4 gap-6 xl:gap-8" id="mega-menu-content"></div>
+                    </div>
+                </div>
+            </div>
+            <a href="/pages/journal.html" onclick="event.preventDefault();navigate('news')" class="cursor-pointer hover:text-accent transition-colors py-2 text-primary no-underline" aria-label="Journal">Journal</a>
+        </div>
+
+        <div class="flex items-center gap-2 sm:gap-3 lg:gap-4 shrink-0">
+            <button onclick="toggleMobileSearch()" class="lg:hidden text-base sm:text-lg p-1" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <a href="/pages/wishlist.html" onclick="event.preventDefault();navigate('wishlist')" class="relative cursor-pointer p-1 no-underline text-primary" aria-label="Wishlist">
+                <i class="fa-regular fa-heart text-base sm:text-lg lg:text-xl hover:text-red-400 transition-colors"></i>
+                <span id="wish-count" class="absolute -top-0.5 -right-0.5 bg-red-500 text-white text-[8px] sm:text-[9px] w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full flex items-center justify-center font-bold">0</span>
+            </a>
+            <a href="/pages/cart.html" onclick="event.preventDefault();toggleCart()" class="relative cursor-pointer p-1 no-underline text-primary" aria-label="Shopping Cart">
+                <i class="fa-solid fa-bag-shopping text-base sm:text-lg lg:text-xl"></i>
+                <span id="cart-count" class="absolute -top-0.5 -right-0.5 bg-primary text-white text-[8px] sm:text-[9px] w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full flex items-center justify-center font-bold">0</span>
+            </a>
+            <div id="auth-nav-area" class="hidden lg:block">
+                <a href="#" onclick="event.preventDefault();openAuthModal()" class="px-4 py-2 bg-primary text-white rounded-full text-[10px] font-bold uppercase tracking-wider hover:bg-accent transition-all shadow-sm no-underline inline-block">Sign In</a>
+            </div>
+            <button onclick="toggleMobileMenu()" class="lg:hidden text-lg sm:text-xl p-1" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </div>
+    
+    <div id="mobile-search-bar" class="hidden lg:hidden px-3 sm:px-4 pb-3">
+        <div class="relative">
+            <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
+            <input type="text" id="mobile-search-input" placeholder="Search products..." class="w-full pl-9 pr-4 py-2.5 rounded-xl bg-gray-100 text-sm outline-none border-none">
+        </div>
+    </div>
+    
+    <div id="mobile-menu" class="hidden lg:hidden bg-white border-t shadow-lg">
+        <div class="flex flex-col p-4 sm:p-6 space-y-2 font-bold text-sm">
+            <a href="/" onclick="event.preventDefault();navigate('home');toggleMobileMenu()" class="text-left py-2.5 px-2 rounded-lg hover:bg-gray-50 text-primary no-underline block">Home</a>
+            <a href="/pages/products.html" onclick="event.preventDefault();navigate('products');toggleMobileMenu()" class="text-left py-2.5 px-2 rounded-lg hover:bg-gray-50 text-primary no-underline block">All Products</a>
+            <div id="mobile-category-links" class="flex flex-col space-y-1 pl-3 border-l-2 border-gray-100 ml-2"></div>
+            <a href="/pages/journal.html" onclick="event.preventDefault();navigate('news');toggleMobileMenu()" class="text-left py-2.5 px-2 rounded-lg hover:bg-gray-50 text-primary no-underline block">Journal</a>
+            <a href="/pages/wishlist.html" onclick="event.preventDefault();navigate('wishlist');toggleMobileMenu()" class="text-left py-2.5 px-2 rounded-lg hover:bg-gray-50 text-primary no-underline block">Wishlist</a>
+            <div id="mobile-auth-area" class="pt-4 mt-2 border-t border-gray-100"></div>
+        </div>
+    </div>
+</nav>
