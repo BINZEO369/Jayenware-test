@@ -1,0 +1,113 @@
+<div id="order-loader-overlay" style="position:fixed;inset:0;background:rgba(255,255,255,0.98);z-index:9998;display:none;align-items:center;justify-content:center;flex-direction:column;">
+    <div style="width:44px;height:44px;border:3px solid #1a1a1a;border-top-color:transparent;border-radius:50%;animation:spin 0.6s linear infinite;"></div>
+    <p class="mt-4 font-black uppercase tracking-[0.3em] text-xs">Processing Order...</p>
+</div>
+
+<div id="toast" style="position:fixed;top:16px;right:16px;z-index:200;transform:translateX(120%);transition:transform 0.35s cubic-bezier(0.4,0,0.2,1);max-width:calc(100vw - 32px);">
+    <div class="bg-white shadow-2xl rounded-2xl p-3 flex items-center gap-3 min-w-[260px] border border-gray-100">
+        <span id="toast-icon" class="w-8 h-8 rounded-full flex items-center justify-center text-sm shrink-0"></span>
+        <p id="toast-text" class="text-xs font-bold flex-grow"></p>
+        <button onclick="hideToast()" class="text-gray-300 hover:text-gray-600 shrink-0"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+</div>
+
+<div id="auth-modal" class="premium-modal fixed inset-0 z-[100] hidden flex items-center justify-center p-4">
+    <div class="bg-white w-full max-w-sm sm:max-w-md rounded-3xl p-6 sm:p-8 lg:p-10 relative">
+        <button onclick="closeAuthModal()" class="absolute top-4 right-4 sm:top-6 sm:right-6 text-gray-400 hover:text-primary"><i class="fa-solid fa-xmark"></i></button>
+        <div class="flex gap-4 sm:gap-6 mb-6 sm:mb-8 border-b">
+            <button onclick="toggleAuth('login')" id="t-login" class="pb-2 sm:pb-3 font-bold text-primary border-b-2 border-primary uppercase text-[10px] sm:text-xs tracking-wider">Login</button>
+            <button onclick="toggleAuth('signup')" id="t-signup" class="pb-2 sm:pb-3 font-bold text-gray-400 uppercase text-[10px] sm:text-xs tracking-wider">Sign Up</button>
+        </div>
+        <form id="auth-form" class="space-y-3 sm:space-y-4" autocomplete="on">
+            <div id="signup-fields" class="hidden space-y-3 sm:space-y-4">
+                <input type="text" id="auth-name" placeholder="Full Name" class="w-full p-3 sm:p-4 rounded-xl bg-gray-50 border outline-none text-xs sm:text-sm" autocomplete="name">
+                <input type="tel" id="auth-phone" placeholder="Phone Number" class="w-full p-3 sm:p-4 rounded-xl bg-gray-50 border outline-none text-xs sm:text-sm" autocomplete="tel-national">
+                <div class="grid grid-cols-2 gap-2 sm:gap-3"><input type="text" id="auth-district" placeholder="District" class="p-3 sm:p-4 rounded-xl bg-gray-50 border outline-none text-xs sm:text-sm"><input type="text" id="auth-subdistrict" placeholder="Upazila" class="p-3 sm:p-4 rounded-xl bg-gray-50 border outline-none text-xs sm:text-sm"></div>
+                <textarea id="auth-address" placeholder="Full Address" class="w-full p-3 sm:p-4 rounded-xl bg-gray-50 border outline-none text-xs sm:text-sm h-16 sm:h-20" autocomplete="street-address"></textarea>
+            </div>
+            <input type="email" id="auth-email" placeholder="Email Address" required class="w-full p-3 sm:p-4 rounded-xl bg-gray-50 border outline-none text-xs sm:text-sm" autocomplete="email">
+            <input type="password" id="auth-pass" placeholder="Password" required class="w-full p-3 sm:p-4 rounded-xl bg-gray-50 border outline-none text-xs sm:text-sm" autocomplete="current-password">
+            <button type="submit" class="w-full py-3 sm:py-4 bg-primary text-white rounded-xl font-bold uppercase text-[10px] sm:text-xs tracking-wider hover:bg-accent transition">Continue</button>
+        </form>
+    </div>
+</div>
+
+<div id="edit-profile-modal" class="premium-modal fixed inset-0 z-[100] hidden flex items-center justify-center p-4">
+    <div class="bg-white w-full max-w-sm sm:max-w-md rounded-3xl p-6 sm:p-8 relative">
+        <button onclick="document.getElementById('edit-profile-modal').classList.add('hidden')" class="absolute top-4 right-4 sm:top-6 sm:right-6 text-gray-400 hover:text-primary"><i class="fa-solid fa-xmark"></i></button>
+        <h2 class="text-lg sm:text-xl font-black uppercase mb-4 sm:mb-6">Update Profile</h2>
+        <div class="space-y-3 sm:space-y-4">
+            <input type="text" id="edit-name" placeholder="Full Name" class="w-full p-3 sm:p-4 rounded-xl bg-gray-50 border outline-none text-xs sm:text-sm" autocomplete="name">
+            <input type="tel" id="edit-phone" placeholder="Phone Number" class="w-full p-3 sm:p-4 rounded-xl bg-gray-50 border outline-none text-xs sm:text-sm" autocomplete="tel-national">
+            <div class="grid grid-cols-2 gap-2 sm:gap-3"><input type="text" id="edit-district" placeholder="District" class="p-3 sm:p-4 rounded-xl bg-gray-50 border outline-none text-xs sm:text-sm"><input type="text" id="edit-subdistrict" placeholder="Upazila" class="p-3 sm:p-4 rounded-xl bg-gray-50 border outline-none text-xs sm:text-sm"></div>
+            <textarea id="edit-address" placeholder="Full Address" class="w-full p-3 sm:p-4 rounded-xl bg-gray-50 border outline-none text-xs sm:text-sm h-16 sm:h-20" autocomplete="street-address"></textarea>
+            <button onclick="handleUpdateProfile()" class="w-full py-3 sm:py-4 bg-primary text-white rounded-xl font-bold uppercase text-[10px] sm:text-xs tracking-wider hover:bg-accent transition">Save</button>
+        </div>
+    </div>
+</div>
+
+<div id="order-details-modal" class="premium-modal fixed inset-0 z-[150] hidden flex items-center justify-center p-4">
+    <div class="bg-white w-full max-w-sm sm:max-w-lg rounded-3xl p-6 sm:p-8 relative max-h-[85vh] overflow-y-auto custom-scroll">
+        <button onclick="closeOrderDetails()" class="absolute top-4 right-4 sm:top-6 sm:right-6 text-gray-400 hover:text-primary text-lg sm:text-xl"><i class="fa-solid fa-xmark"></i></button>
+        <h2 id="od-title" class="text-lg sm:text-xl font-black uppercase mb-4 sm:mb-6 border-b pb-3 sm:pb-4"></h2>
+        <div id="order-details-body" class="space-y-4 sm:space-y-6 text-xs sm:text-sm"></div>
+        <button onclick="closeOrderDetails()" class="mt-6 sm:mt-8 w-full py-3 sm:py-4 bg-primary text-white rounded-2xl font-bold uppercase text-[10px] sm:text-xs tracking-wider">Close</button>
+    </div>
+</div>
+
+<div id="policy-modal" class="premium-modal fixed inset-0 z-[130] hidden flex items-center justify-center p-4">
+    <div class="bg-white w-full max-w-sm sm:max-w-2xl rounded-3xl p-6 sm:p-10 relative max-h-[80vh] overflow-y-auto custom-scroll">
+        <button onclick="document.getElementById('policy-modal').classList.add('hidden')" class="absolute top-4 right-4 sm:top-6 sm:right-6 text-gray-400 hover:text-primary text-lg sm:text-xl"><i class="fa-solid fa-xmark"></i></button>
+        <h2 id="policy-title" class="text-xl sm:text-2xl font-black uppercase mb-4 sm:mb-6"></h2>
+        <div id="policy-content" class="text-xs sm:text-sm text-gray-600 leading-relaxed space-y-3 sm:space-y-4"></div>
+    </div>
+</div>
+
+<div id="checkout-modal" class="premium-modal fixed inset-0 z-[110] hidden flex items-center justify-center p-4">
+    <div class="bg-white w-full max-w-sm sm:max-w-md rounded-3xl p-6 sm:p-8 relative">
+        <button onclick="document.getElementById('checkout-modal').classList.add('hidden')" class="absolute top-4 right-4 sm:top-6 sm:right-6 text-gray-400 hover:text-primary"><i class="fa-solid fa-xmark"></i></button>
+        <h2 class="text-lg sm:text-xl font-black uppercase mb-4 sm:mb-6">Shipping Details</h2>
+        <div class="space-y-4 sm:space-y-6">
+            <button onclick="prepareOrderReview('profile')" class="w-full p-4 sm:p-6 border-2 border-primary/10 rounded-2xl text-left hover:border-primary transition">
+                <span class="block text-[9px] sm:text-[10px] font-black uppercase text-gray-400 mb-1">Saved Address</span>
+                <span id="checkout-profile-addr" class="text-[10px] sm:text-xs font-bold block"></span>
+            </button>
+            <div class="relative text-center"><span class="bg-white px-3 sm:px-4 text-[9px] sm:text-[10px] font-bold text-gray-300 uppercase">Or New</span></div>
+            <input type="text" id="new-phone" placeholder="Phone" class="w-full p-3 sm:p-4 rounded-xl bg-gray-50 border outline-none text-xs sm:text-sm">
+            <div class="grid grid-cols-2 gap-2 sm:gap-3"><input type="text" id="new-district" placeholder="District" class="p-3 sm:p-4 rounded-xl bg-gray-50 border outline-none text-xs sm:text-sm"><input type="text" id="new-upazila" placeholder="Upazila" class="p-3 sm:p-4 rounded-xl bg-gray-50 border outline-none text-xs sm:text-sm"></div>
+            <textarea id="new-address" placeholder="Full Address" class="w-full p-3 sm:p-4 rounded-xl bg-gray-50 border outline-none text-xs sm:text-sm h-16 sm:h-20"></textarea>
+            <button onclick="prepareOrderReview('new')" class="w-full py-3 sm:py-4 bg-primary text-white rounded-2xl font-bold uppercase text-[10px] sm:text-xs tracking-wider">Continue</button>
+        </div>
+    </div>
+</div>
+
+<div id="review-modal" class="premium-modal fixed inset-0 z-[120] hidden flex items-center justify-center p-4">
+    <div class="bg-white w-full max-w-sm sm:max-w-lg rounded-3xl p-6 sm:p-8 relative max-h-[85vh] overflow-y-auto custom-scroll">
+        <button onclick="document.getElementById('review-modal').classList.add('hidden')" class="absolute top-4 right-4 sm:top-6 sm:right-6 text-gray-400 hover:text-primary"><i class="fa-solid fa-xmark"></i></button>
+        <h2 class="text-lg sm:text-xl font-black uppercase border-b pb-3 sm:pb-4 mb-4 sm:mb-6">Review Order</h2>
+        <div id="order-review-body" class="space-y-4 sm:space-y-6 text-xs sm:text-sm"></div>
+        <div class="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t space-y-2 sm:space-y-3">
+            <button onclick="confirmFinalCheckout()" class="w-full py-3 sm:py-4 bg-primary text-white rounded-2xl font-bold uppercase text-[10px] sm:text-xs tracking-wider hover:bg-accent transition shadow-lg">Place Order</button>
+            <button onclick="document.getElementById('review-modal').classList.add('hidden')" class="w-full py-3 sm:py-4 bg-gray-100 text-primary rounded-2xl font-bold uppercase text-[10px] sm:text-xs tracking-wider">Back</button>
+        </div>
+    </div>
+</div>
+
+<div id="cookieConsent" class="cookie-consent-overlay">
+    <div class="cookie-banner">
+        <div class="cookie-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+            </svg>
+        </div>
+        <div class="cookie-text">
+            <h4>🍪 We Value Your Privacy</h4>
+            <p>We use cookies to enhance your browsing experience and analyze site traffic. 
+            <a href="#" onclick="event.preventDefault();openPolicy('privacy')">Privacy Policy</a></p>
+        </div>
+        <div class="cookie-buttons">
+            <button class="cookie-btn decline" onclick="handleCookieDecline()">Decline All</button>
+            <button class="cookie-btn accept" onclick="handleCookieAccept()">Accept All Cookies</button>
+        </div>
+    </div>
+</div>
