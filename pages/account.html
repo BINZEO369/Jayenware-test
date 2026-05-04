@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-BD" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>My Account | JAYENWARE</title>
+    <meta name="description" content="Manage your JAYENWARE account, orders, and profile.">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#1a1a1a">
+    <meta property="og:title" content="My Account | JAYENWARE">
+    <meta property="og:image" content="https://ozuwazkqyrxiwwfjceth.supabase.co/storage/v1/object/public/images/Beige%20Black%20Minimal%20Simple%20Modern%20Handwritten%20Graffiti%20Typographic%20Arts%20and_20251212_154142_0000.png">
+    <meta property="og:url" content="https://www.jayenware.shop/account">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="My Account | JAYENWARE">
+    <meta name="twitter:image" content="https://ozuwazkqyrxiwwfjceth.supabase.co/storage/v1/object/public/images/Beige%20Black%20Minimal%20Simple%20Modern%20Handwritten%20Graffiti%20Typographic%20Arts%20and_20251212_154142_0000.png">
+    <link rel="canonical" href="https://www.jayenware.shop/account">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://ozuwazkqyrxiwwfjceth.supabase.co/storage/v1/object/public/images/Beige%20Black%20Minimal%20Simple%20Modern%20Handwritten%20Graffiti%20Typographic%20Arts%20and_20251212_154142_0000.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="antialiased">
+    <div id="header-container"></div>
+    
+    <main class="pt-14 sm:pt-16 lg:pt-20">
+        <section id="account" class="page-section active-page fade-in py-6 sm:py-8 lg:py-12 bg-soft min-h-screen">
+            <div class="max-w-3xl mx-auto px-3 sm:px-4">
+                <div class="bg-white rounded-3xl p-6 sm:p-8 lg:p-12 shadow-xl">
+                    <div class="text-center mb-8 sm:mb-10">
+                        <div class="w-16 h-16 sm:w-20 sm:h-20 bg-primary/5 text-primary rounded-full flex items-center justify-center text-2xl sm:text-3xl mx-auto mb-3 sm:mb-4"><i class="fa-solid fa-user"></i></div>
+                        <h2 id="profile-name" class="text-xl sm:text-2xl font-black font-serif mb-1">Welcome Back</h2>
+                        <p id="profile-email" class="text-gray-400 text-xs sm:text-sm"></p>
+                    </div>
+                    <div class="space-y-4 sm:space-y-6 mb-8 sm:mb-10">
+                        <div class="p-4 sm:p-6 bg-soft rounded-2xl">
+                            <div class="flex justify-between items-start mb-3 sm:mb-4">
+                                <h3 class="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-gray-400">Shipping Address</h3>
+                                <button onclick="openEditProfile()" class="text-primary text-[10px] sm:text-xs font-bold uppercase hover:text-accent transition"><i class="fa-solid fa-pen mr-1"></i>Edit</button>
+                            </div>
+                            <div id="profile-address-full" class="text-xs sm:text-sm font-medium text-gray-700"></div>
+                        </div>
+                        <div class="p-4 sm:p-6 border border-gray-100 rounded-2xl">
+                            <h3 class="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-gray-400 mb-3 sm:mb-4">Order History</h3>
+                            <div id="user-order-list" class="space-y-2 sm:space-y-3 max-h-[350px] sm:max-h-[400px] overflow-y-auto custom-scroll"><p class="text-[10px] sm:text-xs text-gray-400 italic">Loading...</p></div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3 sm:gap-4">
+                        <button onclick="handleLogout()" class="py-3 sm:py-4 border-2 border-red-500 text-red-500 rounded-2xl font-bold text-[10px] sm:text-xs uppercase tracking-wider hover:bg-red-500 hover:text-white transition">Sign Out</button>
+                        <a href="/pages/products.html" onclick="event.preventDefault();navigate('products')" class="py-3 sm:py-4 bg-primary text-white rounded-2xl font-bold text-[10px] sm:text-xs uppercase tracking-wider hover:bg-accent transition no-underline inline-block text-center">Continue Shopping</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-container"></div>
+    <div id="cart-drawer-container"></div>
+    <div id="modals-container"></div>
+
+    <div class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50">
+        <a href="https://m.me/861762253694814" target="_blank" rel="noopener noreferrer" class="w-12 h-12 sm:w-14 sm:h-14 bg-primary text-white rounded-full flex items-center justify-center text-lg sm:text-xl shadow-2xl hover:bg-accent transition-all no-underline" aria-label="Chat with us on Messenger">
+            <i class="fa-brands fa-facebook-messenger"></i>
+        </a>
+        <span class="absolute top-0 right-0 w-2.5 h-2.5 sm:w-3 sm:h-3 bg-green-500 rounded-full border-2 border-white" aria-label="Online"></span>
+    </div>
+
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>
